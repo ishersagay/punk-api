@@ -1,11 +1,13 @@
 import "./Main.scss";
-import Card from "../Card/Card";
+import CardList from "../CardList/CardList";
 
-const Main = () => {
+const Main = (props) => {
+
+    const {beerData} = props;
 
     return (
         <>
-            <Card/>
+            <CardList beerData={beerData}/>
         </>
     )
 }

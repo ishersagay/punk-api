@@ -2,15 +2,15 @@ import React from "react";
 import "./Card.scss";
 
 const Card = (props) => {
-    const {name, tagline, description, abv, pH, imageURL} = props;
-
+    const {name, tagline, description, abv, pH, image_url} = props.beer;
+    console.log(name)
     return (
         <>
             <div className="card">
                 <div className="flip-card">
                     <div className="flip-card-inner">
                         <div className="flip-card-front">
-                            <img src={imageURL} className="beer__img"/>
+                            <img src={image_url} className="beer__img"/>
                         </div>
                         <div className="flip-card-back">
                             <h2>Name: {name}</h2>
