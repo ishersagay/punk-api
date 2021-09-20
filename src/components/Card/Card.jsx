@@ -3,7 +3,6 @@ import "./Card.scss";
 
 const Card = (props) => {
     const {name, tagline, description, abv, pH, image_url} = props.beer;
-    console.log(name)
     return (
         <>
             <div className="card">

@@ -4,14 +4,9 @@ import FiltersList from "../FiltersList/FiltersList";
 import SearchBox from "../SearchBox/SearchBox";
 
 
-const Navbar = () => {
+const Navbar = (props) => {
 
-    const [searchTerm, setSearchTerm] = useState("")
-
-    const handleInput = event => {
-        const cleanInput = event.target.value.toLowerCase();
-        setSearchTerm(cleanInput)
-    }
+    const {searchTerm, handleInput} = props
 
     return (
         <>
