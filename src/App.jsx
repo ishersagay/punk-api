@@ -5,7 +5,7 @@ import Navbar from "./components/Navbar/Navbar";
 
 function App() {
 
-    const [beerData, setBeerData] = useState("")
+    const [beerData, setBeerData] = useState([])
     const [searchTerm, setSearchTerm] = useState("")
 
     const getBeersApi = () => {
@@ -23,18 +23,20 @@ function App() {
 
     }
 
-    // const newData = beerData.filter(beer => {
-    //     const resultsName = beer.name.toLowerCase();
-    //     return resultsName.includes(searchTerm) && beer.image_url;
-    // })
+    const newData = beerData.filter(beer => {
+        const resultsName = beer.name.toLowerCase();
+        return resultsName.includes(searchTerm) && beer.image_url;
+    })
 
-
-    console.log(beerData, "line 37")
     return (
         <>
             <div className="app">
-                <Navbar searchTerm={searchTerm} handleInput={handleInput}/>
-                {beerData && <Main beerData={beerData}/>}
+                <div className="app-nav">
+                    <Navbar searchTerm={searchTerm} handleInput={handleInput}/>
+                </div>
+                <div className="main-beer_cards">
+                    {newData && <Main beerData={newData}/>}
+                </div>
             </div>
         </>
     );

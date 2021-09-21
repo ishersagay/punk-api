@@ -4,15 +4,28 @@
 }
 
 .app {
-  display: grid;
-  grid-template-columns: 1fr 5fr;
-  grid-template-rows: 1fr;
+  display: flex;
+  flex-direction: row;
   width: 99vw;
   height: 100vh;
+  background-color: #FEC8D8;
+}
+
+.app-nav {
+  border: solid black 2px;
+  width: 10%;
+}
+
+.main-beer_cards {
+  display: grid;
+  width: 90%;
+  border: solid black 2px;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
 }
 
 @media screen and (max-width: 375px) {
-  .app {
+  .main-beer_cards {
     grid-template-columns: 1fr;
     grid-template-rows: 1fr 5fr;
   }
